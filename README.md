@@ -1,5 +1,5 @@
 # jersey-rest-assured-code-coverage-with-jacococli-and-jacocoagent-master
-* create war of project and before deploying war to tomact create a setenv.bat file inside tomact_home/bin and add set JAVA_OPTS inside that file like below.in case of linux counter file is setenv.sh .
+* create war of project and before deploying war to tomact create a setenv.bat file inside <tomcat-home-directory>/bin and add set JAVA_OPTS inside that file like below.in case of linux counter file is setenv.sh .
   
   `set JAVA_OPTS="-javaagent:<path-of-jar>\jacocoagent.jar=address=*,port=36320,destfile=<path-to-application>\build\jacoco-it.exec,output=tcpserver"`
   
