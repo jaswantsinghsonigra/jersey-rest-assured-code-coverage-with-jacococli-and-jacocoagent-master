@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'war'
+    id 'com.bmuschko.tomcat' version '2.5'
+}
+
+group 'com.rest-assured-app'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.2.0'
+    compile group: 'org.glassfish.jersey.core', name: 'jersey-client', version: '2.25.1'
+    compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet', version: '2.25.1'
+    compile group: 'org.glassfish.jersey', name: 'jersey-bom', version: '2.25.1', ext: 'pom'
+    compile group: 'org.glassfish.jersey.media', name: 'jersey-media-moxy', version: '2.25.1'
+    compile group: 'org.glassfish.jersey.core', name: 'jersey-server', version: '2.25.1'
+    compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0'
+
+
+    def tomcatVersion = '9.0.1'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:9.0.0.M6",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
+
+ tomcat {
+     contextPath= '/'
+     httpProtocol = 'org.apache.coyote.http11.Http11Nio2Protocol'
+     ajpProtocol  = 'org.apache.coyote.ajp.AjpNio2Protocol'
+ }
+
+ war {
+     archiveFileName  = 'junitrestweb.war'
+ }
+
+
+
+
