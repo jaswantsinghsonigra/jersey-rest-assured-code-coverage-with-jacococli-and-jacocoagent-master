@@ -7,9 +7,9 @@
 
 * then use below command to hit rest endpoints or else run test using gradlew test command
   
-  'curl -X GET http://localhost:8080/webapi/employee/145'
+    'curl -X GET http://localhost:8080/webapi/employee/145'
   
-  'curl -X GET http://localhost:8080/webapi/employee/hello'
+    'curl -X GET http://localhost:8080/webapi/employee/hello'
 
 * now dump the file, which will be in exec format. This code will be all data collected from javaagent to analyze the code coverage. We will use this command to dump the report and the dump file will be inside the build folder.
        
