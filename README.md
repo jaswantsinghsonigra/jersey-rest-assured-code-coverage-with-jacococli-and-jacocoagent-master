@@ -3,7 +3,7 @@
 
 * create war of project and before deploying war to tomact create a setenv.bat file inside `<tomcat-home-directory>/bin` and add set JAVA_OPTS inside that file like below.in case of linux counter file is setenv.sh .
   
-  `set JAVA_OPTS="-javaagent:<path-of-jar>\jacocoagent.jar=address=*,port=36320,destfile=<path-to-application>\build\jacoco-it.exec,output=tcpserver"`
+  `set JAVA_OPTS="-javaagent:<path-of-jar>\jacocoagent.jar=address=*,port=36320,destfile=jacoco-it.exec,output=tcpserver"`
   
 * after creating setenv.bat file start tomcat
 
